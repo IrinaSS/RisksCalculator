@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp1
 {
@@ -10,7 +11,9 @@ namespace ConsoleApp1
 
 		ICollection<Scenario> IScenarioBuilder.BuildScenarios(ICollection<Equipment> equipments)
 		{
-			throw new System.NotImplementedException();
+			return equipments
+				.Select(equipment => new Scenario(equipment))
+				.ToArray();
 		}
 	}
 }

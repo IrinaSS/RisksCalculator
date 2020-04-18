@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 
 namespace ConsoleApp1
@@ -7,16 +8,27 @@ namespace ConsoleApp1
 	{
 		static void Main(string[] args)
 		{
-			//new ServiceCollection();
-			var equipmentProvider = new EquipmentProvider();
+		 //	var services = new ServiceCollection();
+
+			//RegisterServices(services);
+
+			var equipmentProvider = new DummyEquipmentProvider();
 			var scenarioBuilder = new ScenarioBuilder();
 			var reportsExporter = new ReportsExporter();
-
-
 
 			var calculator = new Calculator(equipmentProvider, scenarioBuilder, reportsExporter);
 			calculator.Do();
 		}
+
+		//private static IServiceCollection RegisterServices(IServiceCollection services)
+		//{
+		//	return services
+		//		.AddSingleton<IEquipmentProvider, EquipmentProvider>()
+		//		.AddSingleton<IScenarioBuilder, ScenarioBuilder>()
+		//		.AddSingleton<IReportsExporter, ReportsExporter>()
+		//		.AddSingleton<ICalculator, Calculator>()
+		//	;
+		//}
 
 		//static IServiceCollection RegisterClasses(IServiceCollection services)
 

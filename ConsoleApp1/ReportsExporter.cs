@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
@@ -10,7 +11,7 @@ namespace ConsoleApp1
 
 		void IReportsExporter.ExportReports(ICollection<Scenario> scenarioList)
 		{
-			throw new System.NotImplementedException();
+			Console.WriteLine($"рассчитано сценариев : {scenarioList.Count}");
 		}
 	}
 }
