@@ -7,7 +7,15 @@ namespace ConsoleApp1
 	{
 		static void Main(string[] args)
 		{
-			new ServiceCollection();
+			//new ServiceCollection();
+			var equipmentProvider = new EquipmentProvider();
+			var scenarioBuilder = new ScenarioBuilder();
+			var reportsExporter = new ReportsExporter();
+
+
+
+			var calculator = new Calculator(equipmentProvider, scenarioBuilder, reportsExporter);
+			calculator.Do();
 		}
 
 		//static IServiceCollection RegisterClasses(IServiceCollection services)
