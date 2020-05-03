@@ -4,7 +4,7 @@ namespace ConsoleApp1
 {
     class Scenario
     {
-        Equipment Equipment { get; }
+        public Equipment Equipment { get; }
 
         public Scenario(Equipment equipment)
         {
@@ -13,7 +13,6 @@ namespace ConsoleApp1
 
         internal void Calculate()
         {
-            return;
             CalculateAccidentMasses();
             CalculateDamagingMasses();
 
@@ -28,32 +27,26 @@ namespace ConsoleApp1
 
         private void CalculateRisk()
         {
-            throw new NotImplementedException();
         }
 
         private void CalculateLoss()
         {
-            throw new NotImplementedException();
         }
 
         private void CalculateInjured()
         {
-            throw new NotImplementedException();
         }     
 
         private void CalculateDamageZone()
         {
-            throw new NotImplementedException();
         }
 
         private void CalculateDamagingMasses()
         {
-            throw new NotImplementedException();
         }
 
         private void CalculateAccidentMasses()
         {
-            throw new NotImplementedException();
         }
     }
 }

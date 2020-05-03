@@ -8,13 +8,14 @@ namespace ConsoleApp1
 	{
 		static void Main(string[] args)
 		{
-		 //	var services = new ServiceCollection();
+			//	var services = new ServiceCollection();
 
 			//RegisterServices(services);
-
+			var reportProvider = new MassReportProvider();
+			var reportExporter = new ConsoleReportExporter();
 			var equipmentProvider = new DummyEquipmentProvider();
 			var scenarioBuilder = new ScenarioBuilder();
-			var reportsExporter = new ReportsExporter();
+			var reportsExporter = new ReportsExporter(new[] { reportProvider }, reportExporter);
 
 			var calculator = new Calculator(equipmentProvider, scenarioBuilder, reportsExporter);
 			calculator.Do();

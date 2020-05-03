@@ -2,5 +2,6 @@
 {
     internal class Equipment
     {
+        public string Name { get; }
     }
 }
